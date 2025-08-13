@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     private var viewModel: ArticlesViewModel!
+    private var navigationCoordinator: NavigationCoordinatorProtocol!
     
     // MARK: - UI Elements
     private let tableView: UITableView = {
@@ -61,6 +62,10 @@ class ViewController: UIViewController {
     // MARK: - Configuration
     func configure(with viewModel: ArticlesViewModel) {
         self.viewModel = viewModel
+    }
+    
+    func configureNavigation(with coordinator: NavigationCoordinatorProtocol) {
+        self.navigationCoordinator = coordinator
     }
     
     // MARK: - Lifecycle
@@ -206,9 +211,7 @@ extension ViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         guard let article = viewModel.getArticle(at: indexPath.row) else { return }
-        
-        let detailViewController = ArticleDetailViewController(article: article)
-        navigationController?.pushViewController(detailViewController, animated: true)
+        navigationCoordinator.showArticleDetail(article, from: self)
     }
 }
 

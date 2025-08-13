@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Centralized dependency container following the Dependency Injection pattern
 /// This ensures all dependencies are properly managed and testable
@@ -30,6 +31,11 @@ class DependencyContainer {
         let viewModel = makeArticlesViewModel()
         viewController.configure(with: viewModel)
         return viewController
+    }
+    
+    // MARK: - Navigation
+    func makeNavigationCoordinator(for navigationController: UINavigationController) -> NavigationCoordinatorProtocol {
+        return NavigationCoordinator(navigationController: navigationController)
     }
     
     private init() {}

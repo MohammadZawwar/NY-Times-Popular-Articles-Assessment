@@ -35,7 +35,8 @@ NY Times Most Popular Articles/
 ├── Configuration/
 │   ├── APIConfig.swift          # API configuration
 │   ├── DependencyContainer.swift # Dependency injection container
-│   └── DateFormatterUtility.swift # Shared date formatting utilities
+│   ├── DateFormatterUtility.swift # Shared date formatting utilities
+│   └── NavigationCoordinator.swift # Navigation coordination
 ├── Models/
 │   └── Article.swift            # Data models
 ├── Services/

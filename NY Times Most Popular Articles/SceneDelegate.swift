@@ -20,6 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let viewController = DependencyContainer.shared.makeViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
         
+        let navigationCoordinator = DependencyContainer.shared.makeNavigationCoordinator(for: navigationController)
+        viewController.configureNavigation(with: navigationCoordinator)
+        
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
