@@ -32,23 +32,45 @@ This project follows **SOLID principles** and implements **Dependency Injection*
 
 ```
 NY Times Most Popular Articles/
-├── Configuration/
-│   ├── APIConfig.swift          # API configuration
-│   ├── DependencyContainer.swift # Dependency injection container
-│   ├── DateFormatterUtility.swift # Shared date formatting utilities
-│   └── NavigationCoordinator.swift # Navigation coordination
-├── Models/
-│   └── Article.swift            # Data models
-├── Services/
-│   ├── NetworkService.swift     # Network layer
-│   └── ArticlesRepository.swift # Data access layer (Repository pattern)
-├── ViewModels/
-│   └── ArticlesViewModel.swift  # Business logic
-├── Views/
-│   ├── ArticleTableViewCell.swift
-│   └── ArticleDetailViewController.swift
-└── ViewController.swift         # Main view controller
+├── Info.plist                          # App configuration
+├── Sources/                            # Main source code
+│   ├── App/
+│   │   ├── AppDelegate.swift           # App lifecycle management
+│   │   ├── SceneDelegate.swift         # Scene lifecycle management
+│   │   ├── DependencyContainer.swift   # Dependency injection container
+│   │   ├── NavigationCoordinator.swift # Navigation coordination
+│   │   └── DateFormatterUtility.swift  # Shared date formatting utilities
+│   ├── Features/
+│   │   └── Articles/
+│   │       ├── Controllers/
+│   │       │   ├── ArticlesViewController.swift # Main articles list view
+│   │       │   └── ArticleDetailViewController.swift # Article detail view
+│   │       ├── ViewModels/
+│   │       │   └── ArticlesViewModel.swift # Business logic and state management
+│   │       ├── Views/
+│   │       │   └── ArticleTableViewCell.swift # Article list cell
+│   │       └── Models/
+│   │           └── Article.swift       # Data models for API responses
+│   ├── Networking/
+│   │   ├── NetworkService.swift        # Network layer with protocol abstraction
+│   │   ├── APIConfig.swift            # API configuration and URL generation
+│   │   └── ArticlesRepository.swift   # Data access layer (Repository pattern)
+│   └── Resources/
+│       ├── Assets.xcassets/           # App icons and images
+│       └── Base.lproj/                # Localization and storyboards
+├── NY Times Most Popular ArticlesTests/ # Test target
+│   ├── ArticlesViewModelTests.swift   # ViewModel unit tests
+│   └── ArticleTests.swift             # Model unit tests
+└── NY Times Most Popular Articles.xcodeproj/
 ```
+
+### Architecture Layers
+
+- **App Layer**: App lifecycle, DI container, navigation, and utilities
+- **Features Layer**: Feature-based organization with Controllers, ViewModels, Views, and Models
+- **Networking Layer**: Network communication, API configuration, and data access
+- **Resources Layer**: Assets, localization, and configuration files
+- **Tests Layer**: Unit tests for business logic and models
 
 ## Testing
 
@@ -58,8 +80,9 @@ The project includes unit tests that demonstrate fundamental testing concepts:
 
 ## Requirements
 
-  - Xcode 16
-  - Swift 5
+- iOS 18.0+
+- Xcode 16.0+
+- Swift 5.0+
 
 ## Getting Started
 

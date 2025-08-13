@@ -30,7 +30,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		7905DAB32E4A790A00CF7199 /* Exceptions for "NY Times Most Popular Articles" folder in "NY Times Most Popular Articles" target */ = {
+		796597D12E4D1DB3004EAC2D /* Exceptions for "NY Times Most Popular ArticlesTests" folder in "NY Times Most Popular Articles" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+			);
+			target = 7905DA8A2E4A790900CF7199 /* NY Times Most Popular Articles */;
+		};
+		796597D22E4D1DB3004EAC2D /* Exceptions for "NY Times Most Popular ArticlesTests" folder in "NY Times Most Popular ArticlesTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ArticlesViewModelTests.swift,
+				ArticleTests.swift,
+			);
+			target = 7905DAA02E4A790A00CF7199 /* NY Times Most Popular ArticlesTests */;
+		};
+		796598092E4D1F4F004EAC2D /* Exceptions for "NY Times Most Popular Articles" folder in "NY Times Most Popular Articles" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -43,13 +57,17 @@
 		7905DA8D2E4A790900CF7199 /* NY Times Most Popular Articles */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				7905DAB32E4A790A00CF7199 /* Exceptions for "NY Times Most Popular Articles" folder in "NY Times Most Popular Articles" target */,
+				796598092E4D1F4F004EAC2D /* Exceptions for "NY Times Most Popular Articles" folder in "NY Times Most Popular Articles" target */,
 			);
 			path = "NY Times Most Popular Articles";
 			sourceTree = "<group>";
 		};
 		7905DAA42E4A790A00CF7199 /* NY Times Most Popular ArticlesTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				796597D12E4D1DB3004EAC2D /* Exceptions for "NY Times Most Popular ArticlesTests" folder in "NY Times Most Popular Articles" target */,
+				796597D22E4D1DB3004EAC2D /* Exceptions for "NY Times Most Popular ArticlesTests" folder in "NY Times Most Popular ArticlesTests" target */,
+			);
 			path = "NY Times Most Popular ArticlesTests";
 			sourceTree = "<group>";
 		};
