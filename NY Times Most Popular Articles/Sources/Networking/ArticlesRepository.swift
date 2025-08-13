@@ -23,7 +23,16 @@ class ArticlesRepository: ArticlesRepositoryProtocol {
     
     // MARK: - Public Methods
     func fetchArticles(section: String, period: Int) async throws -> [Article] {
-        let response = try await networkService.fetchArticles(section: section, period: period)
+        guard !APIConfig.apiKey.isEmpty else {
+            throw NetworkError.invalidAPIKey
+        }
+        
+        guard let url = URL(string: APIConfig.articlesURL(section: section, period: period)) else {
+            throw NetworkError.invalidURL
+        }
+        
+        let response: ArticleResponse = try await networkService.get(url: url)
+        
         return response.results
     }
 }
