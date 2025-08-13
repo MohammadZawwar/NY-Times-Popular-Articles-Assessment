@@ -28,11 +28,11 @@ class ArticlesViewModel {
     private(set) var isLoading = false
     private(set) var errorMessage: String?
     
-    private let networkService: NetworkServiceProtocol
+    private let articlesRepository: ArticlesRepositoryProtocol
     
     // MARK: - Initialization
-    init(networkService: NetworkServiceProtocol) {
-        self.networkService = networkService
+    init(articlesRepository: ArticlesRepositoryProtocol) {
+        self.articlesRepository = articlesRepository
     }
     
     // MARK: - Public Methods
@@ -45,9 +45,9 @@ class ArticlesViewModel {
         
         Task {
             do {
-                let response = try await networkService.fetchArticles(section: section, period: period)
+                let articles = try await articlesRepository.fetchArticles(section: section, period: period)
                 await MainActor.run {
-                    self.articles = response.results
+                    self.articles = articles
                     self.isLoading = false
                     self.delegate?.articlesDidUpdate(self.articles)
                     self.delegate?.loadingStateChanged(false)

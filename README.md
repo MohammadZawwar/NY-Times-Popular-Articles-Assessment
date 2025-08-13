@@ -40,7 +40,8 @@ NY Times Most Popular Articles/
 ├── Models/
 │   └── Article.swift            # Data models
 ├── Services/
-│   └── NetworkService.swift     # Network layer
+│   ├── NetworkService.swift     # Network layer
+│   └── ArticlesRepository.swift # Data access layer (Repository pattern)
 ├── ViewModels/
 │   └── ArticlesViewModel.swift  # Business logic
 ├── Views/

@@ -20,9 +20,13 @@ class DependencyContainer {
         return NetworkService()
     }()
     
+    lazy var articlesRepository: ArticlesRepositoryProtocol = {
+        return ArticlesRepository(networkService: networkService)
+    }()
+    
     // MARK: - ViewModels
     func makeArticlesViewModel() -> ArticlesViewModel {
-        return ArticlesViewModel(networkService: networkService)
+        return ArticlesViewModel(articlesRepository: articlesRepository)
     }
     
     // MARK: - ViewControllers
