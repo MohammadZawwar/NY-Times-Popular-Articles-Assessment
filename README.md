@@ -46,10 +46,10 @@ NY Times Most Popular Articles/
 │   │       │   ├── Cells/             # Table view cells
 │   │       │   └── Main views         # Main view controllers
 │   │       ├── ViewModels/             # Business logic and state management
-│   │       └── Models/                 # Data models
-│   ├── Networking/
-│   │   ├── NetworkService.swift        # Network layer with protocol abstraction
-│   │   ├── ArticlesRepository.swift    # Data access abstraction
+│   │       ├── Models/                 # Data models
+│   │       └── Repository/             # Feature-specific data access
+│   ├── Networking/                     # Global networking infrastructure
+│   │   ├── NetworkService.swift        # Generic network service
 │   │   └── APIConfig.swift             # API configuration and endpoints
 │   └── Resources/
 │       ├── Assets.xcassets             # App icons and images
