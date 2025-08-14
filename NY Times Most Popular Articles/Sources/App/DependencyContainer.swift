@@ -30,11 +30,11 @@ class DependencyContainer {
     }
     
     // MARK: - ViewControllers
-    func makeArticleViewController() -> ArticlesViewController {
-        let viewController = ArticlesViewController()
+    func makeArticlesView() -> ArticlesView {
+        let view = ArticlesView()
         let viewModel = makeArticlesViewModel()
-        viewController.configure(with: viewModel)
-        return viewController
+        view.configure(with: viewModel)
+        return view
     }
     
     // MARK: - Navigation

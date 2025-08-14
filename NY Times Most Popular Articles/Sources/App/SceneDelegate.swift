@@ -16,12 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         
-        // Use dependency container to create the root view controller
-        let viewController = DependencyContainer.shared.makeArticleViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+        // Use dependency container to create the root view
+        let view = DependencyContainer.shared.makeArticlesView()
+        let navigationController = UINavigationController(rootViewController: view)
         
         let navigationCoordinator = DependencyContainer.shared.makeNavigationCoordinator(for: navigationController)
-        viewController.configureNavigation(with: navigationCoordinator)
+        view.configureNavigation(with: navigationCoordinator)
         
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

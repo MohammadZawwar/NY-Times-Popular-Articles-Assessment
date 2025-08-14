@@ -1,5 +1,5 @@
 //
-//  ArticlesViewController.swift
+//  ArticlesView.swift
 //  NY Times Most Popular Articles
 //
 //  Created by Mohammad Zawwar  on 12/08/2025.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ArticlesViewController: UIViewController {
+class ArticlesView: UIViewController {
     
     // MARK: - Properties
     private var viewModel: ArticlesViewModel!
@@ -161,7 +161,7 @@ class ArticlesViewController: UIViewController {
 }
 
 // MARK: - ArticlesViewModelDelegate
-extension ArticlesViewController: ArticlesViewModelDelegate {
+extension ArticlesView: ArticlesViewModelDelegate {
     func articlesDidUpdate(_ articles: [Article]) {
         tableView.reloadData()
         refreshControl.endRefreshing()
@@ -187,7 +187,7 @@ extension ArticlesViewController: ArticlesViewModelDelegate {
 }
 
 // MARK: - UITableViewDataSource
-extension ArticlesViewController: UITableViewDataSource {
+extension ArticlesView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfArticles
     }
@@ -206,7 +206,7 @@ extension ArticlesViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension ArticlesViewController: UITableViewDelegate {
+extension ArticlesView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         

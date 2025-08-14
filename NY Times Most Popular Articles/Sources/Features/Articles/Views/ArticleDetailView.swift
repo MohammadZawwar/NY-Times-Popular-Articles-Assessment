@@ -1,5 +1,5 @@
 //
-//  ArticleDetailViewController.swift
+//  ArticleDetailView.swift
 //  NY Times Most Popular Articles
 //
 //  Created by Mohammad Zawwar on 12/08/2025.
@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 
-class ArticleDetailViewController: UIViewController {
+class ArticleDetailView: UIViewController {
     
     // MARK: - Properties
     private let article: Article

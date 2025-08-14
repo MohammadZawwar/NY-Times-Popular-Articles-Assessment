@@ -25,7 +25,7 @@ class NavigationCoordinator: NavigationCoordinatorProtocol {
     
     // MARK: - Navigation Methods
     func showArticleDetail(_ article: Article, from viewController: UIViewController) {
-        let detailViewController = ArticleDetailViewController(article: article)
-        navigationController?.pushViewController(detailViewController, animated: true)
+        let detailView = ArticleDetailView(article: article)
+        navigationController?.pushViewController(detailView, animated: true)
     }
 }

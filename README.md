@@ -42,26 +42,19 @@ NY Times Most Popular Articles/
 │   │   └── DateFormatterUtility.swift  # Shared date formatting utilities
 │   ├── Features/
 │   │   └── Articles/
-│   │       ├── Controllers/
-│   │       │   ├── ArticlesViewController.swift # Main articles list view
-│   │       │   └── ArticleDetailViewController.swift # Article detail view
-│   │       ├── ViewModels/
-│   │       │   └── ArticlesViewModel.swift # Business logic and state management
-│   │       ├── Views/
-│   │       │   └── ArticleTableViewCell.swift # Article list cell
-│   │       └── Models/
-│   │           └── Article.swift       # Data models for API responses
+│   │       ├── Views/                  # All UI components (views, cells)
+│   │       │   ├── Cells/             # Table view cells
+│   │       │   └── Main views         # Main view controllers
+│   │       ├── ViewModels/             # Business logic and state management
+│   │       └── Models/                 # Data models
 │   ├── Networking/
 │   │   ├── NetworkService.swift        # Network layer with protocol abstraction
-│   │   ├── APIConfig.swift            # API configuration and URL generation
-│   │   └── ArticlesRepository.swift   # Data access layer (Repository pattern)
+│   │   ├── ArticlesRepository.swift    # Data access abstraction
+│   │   └── APIConfig.swift             # API configuration and endpoints
 │   └── Resources/
-│       ├── Assets.xcassets/           # App icons and images
-│       └── Base.lproj/                # Localization and storyboards
-├── NY Times Most Popular ArticlesTests/ # Test target
-│   ├── ArticlesViewModelTests.swift   # ViewModel unit tests
-│   └── ArticleTests.swift             # Model unit tests
-└── NY Times Most Popular Articles.xcodeproj/
+│       ├── Assets.xcassets             # App icons and images
+│       └── Base.lproj/                 # Localization files
+└── NY Times Most Popular ArticlesTests/ # Unit tests
 ```
 
 ### Architecture Layers
